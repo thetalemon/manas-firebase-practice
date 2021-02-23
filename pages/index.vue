@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'Vuex'
 import UploadCard from '~/components/UploadCard.vue'
 import UploadDialog from '~/components/UploadDialog.vue'
 import UploadEnd from '~/components/UploadEnd.vue'
@@ -32,32 +31,13 @@ export default {
       uploaded: false,
     }
   },
-  computed: mapState({
-    isLogin: (state) => state.user.isLogin,
-    displayName: (state) => state.user.displayName,
-    photoURL: (state) => state.user.photoURL,
-  }),
-  mounted: function () {
-    this.statusCheck()
-  },
   methods: {
-    ...mapActions({
-      statusCheck: 'user/statusCheck',
-      login: 'user/login',
-      logout: 'user/logout',
-    }),
     onClickUpload() {
       this.uploading = true
     },
     onUploadEnd() {
       this.uploading = false
       this.uploaded = true
-    },
-    onClickLogin() {
-      this.login()
-    },
-    onClickLogout: function () {
-      this.logout()
     },
   },
 }

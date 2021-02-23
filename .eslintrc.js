@@ -36,7 +36,7 @@ module.exports = {
     'vue/singleline-html-element-content-newline': [
       'error',
       {
-        ignores: ['NuxtLink', 'span', 'button'],
+        ignores: ['NuxtLink', 'span', 'button', 'v-btn'],
       },
     ],
     'vue/html-self-closing': [
